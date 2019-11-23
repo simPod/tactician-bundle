@@ -7,9 +7,7 @@ use Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface
 use Symfony\Component\Security\Core\Authorization\Voter\Voter;
 
 /**
- * Voter for security checks on handling commands.
- *
- * @author Ron Rademaker
+ * TODO out of scope, drop this
  */
 class HandleCommandVoter extends Voter
 {
