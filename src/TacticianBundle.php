@@ -7,7 +7,7 @@ use League\Tactician\Bundle\DependencyInjection\TacticianExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class TacticianBundle extends Bundle
+final class TacticianBundle extends Bundle
 {
     public function build(ContainerBuilder $container) : void
     {
