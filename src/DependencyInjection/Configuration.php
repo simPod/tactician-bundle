@@ -28,6 +28,8 @@ final class Configuration implements ConfigurationInterface
 
         $rootNode = $treeBuilder->getRootNode();
 
+        // TODO make readable
+
         /** @var ArrayNodeDefinition $someNode */
         $someNode = $rootNode
             ->children()
