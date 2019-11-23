@@ -3,6 +3,7 @@
 namespace League\Tactician\Bundle\DependencyInjection;
 
 use League\Tactician\Bundle\DependencyInjection\Compiler\BusBuilder\BusBuildersFromConfig;
+use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
@@ -27,13 +28,16 @@ final class Configuration implements ConfigurationInterface
 
         $rootNode = $treeBuilder->getRootNode();
 
-        $rootNode
+        /** @var ArrayNodeDefinition $someNode */
+        $someNode = $rootNode
             ->children()
             ->arrayNode('commandbus')
             ->defaultValue(['default' => ['middleware' => ['tactician.middleware.command_handler']]])
             ->requiresAtLeastOneElement()
             ->useAttributeAsKey('name')
-            ->prototype('array')
+            ->prototype('array');
+
+        $someNode
             ->children()
             ->arrayNode('middleware')
             ->requiresAtLeastOneElement()
